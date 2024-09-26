@@ -34,6 +34,7 @@ h1 {
   top: 0;
 
   height: 5vh;
+  width: 100vw;
 
   border: white 1px solid;
   box-sizing: border-box;
@@ -46,18 +47,22 @@ h1 {
 */
 
 .list-group {
-  list-style: none;
-  width: 100vw;
+  width: 90vw;
 
-  margin: 0;
+  margin: auto;
   padding: 0;
+
+  list-style: none;
 }
 
 .list-element {
-  width: 100%;
-
   display: flex;
   flex-direction: row;
+
+  height: 5vh;
+  width: 100%;
+
+  cursor: pointer;
 
   border: white 1px solid;
   box-sizing: border-box;
@@ -65,7 +70,17 @@ h1 {
   -webkit-box-sizing: border-box;
 }
 
+.selected {
+  height: 10vh;
+}
+
+.list-element:active {
+  border: white 1px dotted;
+}
+
 .list-element div {
+  padding: auto;
+
   border: white 1px solid;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -90,6 +105,8 @@ h1 {
   padding-right: 10px;
   width: 80%;
 }
+
+/* MISC STUFF xp */
 
 @media (prefers-color-scheme: light) {
   :root {
