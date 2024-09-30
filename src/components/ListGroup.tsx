@@ -3,23 +3,37 @@ import { Result } from "../assets/Interfaces";
 
 interface ListGroupProps {
     result: Result
+    xmlDoc: string
 }
 
 // https://www.ton.eu/exports/reseller_feed_en.xml
 // https://ton-config-api.epk-tech.com/v1/lists/products
 
-function ListGroup( {result } : ListGroupProps ) {
+function ListGroup( { result, xmlDoc } : ListGroupProps ) {
     // const reversed = items.slice().reverse();
 
-    if(result == null) {
-        return ( <h2>erm.... oopsie... </h2>)
-    }
+    const xmlDocument = new DOMParser().parseFromString(xmlDoc, "text/xml")
+    const items = Array.from(xmlDocument.querySelectorAll("item"))
 
-    const listItems = result.products.map((item, index) =>
+
+    const listItems = items.map((item) => {
+
+        {
+            const id = item.querySelector("id")?.textContent;
+            const title = item.querySelector("title")?.textContent;
+            const description = item.querySelector("description")?.textContent;
+            const availability = item.querySelector("availability")?.textContent;
+            const condition = item.querySelector("condition")?.textContent;
+            const price = item.querySelector("price")?.textContent;
+            const brand = item.querySelector("brand")?.textContent;
+            const image_link = item.querySelector("image_link")?.textContent;
+            const gtin = item.querySelector("gtin")?.textContent;
+            const item_group_id = item.querySelector("item_group_id")?.textContent;
+        }
+
         <li  className={'list-element'}
-            key={item.id}
+            key="456"
             onClick={(event: MouseEvent) => { 
-                console.log(index)
                 // i'm sure there is more react-y way to do this.... i just don't know how
                 if(event.currentTarget.classList.contains("selected")) {
                     event.currentTarget.classList.remove("selected");
@@ -27,10 +41,37 @@ function ListGroup( {result } : ListGroupProps ) {
                     event.currentTarget.classList.add("selected");
                 }
             }}>
-            
-            <div className="list-element-id">{item.id}</div>
-            <div className="list-element-title">{item.name}</div>
-            <div className="list-element-misc">{item.product_type}</div>
+            <div className="element-small">
+                <div className="list-element-id">"456"</div>
+                <div className="list-element-title">"456"</div>
+                <div className="list-element-misc">"456"</div>
+            </div>
+            <div className="element-big">
+                <h1>Haiiiiiiiiiiiiiiiiii</h1>
+            </div>
+        </li>
+    })
+
+    /*
+    const listItems = result.products.map((item) =>
+        <li  className={'list-element'}
+            key={item.id}
+            onClick={(event: MouseEvent) => { 
+                // i'm sure there is more react-y way to do this.... i just don't know how
+                if(event.currentTarget.classList.contains("selected")) {
+                    event.currentTarget.classList.remove("selected");
+                } else {
+                    event.currentTarget.classList.add("selected");
+                }
+            }}>
+            <div className="element-small">
+                <div className="list-element-id">{item.id}</div>
+                <div className="list-element-title">{item.name}</div>
+                <div className="list-element-misc">{item.model_file_name}</div>
+            </div>
+            <div className="element-big">
+                <h1>Haiiiiiiiiiiiiiiiiii</h1>
+            </div>
         </li>
     )
 
@@ -38,10 +79,15 @@ function ListGroup( {result } : ListGroupProps ) {
 
     return (
         <>
-            { result.products.length === 0 && <h2>No items found!</h2> }
             <ul className="list-group">{listItems}</ul>
         </>
-    )
+    )*/
+
+    for(const item in  listItems) {
+        console.log(item)
+    }
+
+    return <h1> ... </h1>
 }
 
 export default ListGroup;

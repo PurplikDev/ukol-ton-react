@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 
 import { Result } from "./assets/Interfaces";
 
-import xmlJs from 'xml-js';
-
 function App() {
     const [result, setResult] = useState<Result>();
     const [xmlData, setXmlData] = useState(null);
@@ -13,7 +11,7 @@ function App() {
     try {
         useEffect(() => {
             const fetchResult = async () => {
-                const response = await fetch('link');
+                const response = await fetch('https://ton-config-api.epk-tech.com/v1/lists/products');
                 const result = await response.json() as Result;
                 setResult(result);
             }
@@ -30,11 +28,11 @@ function App() {
     // XML ATTEMPT!!!!!!!!!!!!
 
     useEffect(() => {
-        fetch("link", { headers: { Accept: "application/xml" } } )
+        fetch('https://www.ton.eu/exports/reseller_feed_en.xml', { headers: { Accept: "application/xml" } } )
             .then((response) => response.text())
             .then((xmlText) => {
-                const jsonData = xmlJs.xml2json(xmlText, { compact: true, spaces: 4 });
-                setXmlData(JSON.parse(jsonData));
+                { /* @ts-ignore */ } 
+                setXmlData(xmlText)
             })
             .catch(err => console.log(err));
     }, [])
@@ -42,10 +40,10 @@ function App() {
     return <>
             <div>
 { /* @ts-ignore */ } 
-                {xmlData ? ( <pre>{ JSON.stringify(xmlData.rss.channel.item, null, 4) }</pre> ) : ( <p>Loading XML data...</p> )}
+                {/* xmlData ? ( <pre>{ JSON.stringify(xmlData.rss.channel.item, null, 4) }</pre> ) : ( <p>Loading XML data...</p> ) */ }
             </div>
             <TableController></TableController>
-            <ListGroup result={result!}></ListGroup>
+            { <ListGroup result={result!} xmlDoc={xmlData!}></ListGroup> }
         </>
     }
 export default App;

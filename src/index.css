@@ -56,9 +56,6 @@ h1 {
 }
 
 .list-element {
-  display: flex;
-  flex-direction: row;
-
   height: 5vh;
   width: 100%;
 
@@ -74,17 +71,44 @@ h1 {
   height: 10vh;
 }
 
+.element-small, .element-big {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.element-small {
+  visibility: visible;
+}
+
+.element-big {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.selected .element-small {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.selected .element-big {
+  visibility: visible;
+  border: red 1px dotted;
+}
+
+
+
+
 .list-element:active {
   border: white 1px dotted;
 }
 
 .list-element div {
   padding: auto;
-
-  border: white 1px solid;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
 }
 
 .list-element-id {

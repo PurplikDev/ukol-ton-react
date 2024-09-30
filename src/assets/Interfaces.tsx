@@ -1,4 +1,10 @@
-export interface Product {
+export interface Result {
+      products: ProductData[],
+      last_modified_when: Date
+      checksum: string
+}
+
+interface ProductData {
       id: number,
       product_code: string,
       name: string,
@@ -7,10 +13,4 @@ export interface Product {
       model_file_url: string,
       model_file_name: string,
       alternatives_group_id: number
-  }
-  
-export interface Result {
-      products: Product[],
-      last_modified_when: Date
-      checksum: string
 }
