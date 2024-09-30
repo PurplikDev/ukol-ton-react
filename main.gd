@@ -22,8 +22,6 @@ const ITEMS_PER_PAGE: int = 10
 @onready var page_display: Label = %PageDisplay
 @onready var next_page: Button = %NextPage
 
-@onready var shadowrealm: Node = %Shadowrealm
-
 var xml_dictionary: Dictionary
 var items: Array[Item]
 
@@ -60,7 +58,7 @@ func _http_request_completed(_result, _response_code, _headers, body):
 	xml_file_dumped.emit("res://file.xml")
 
 func request(p_request: String) -> void:
-	var error = http_request.request(p_request, ["Accept: application/xml"])
+	var error = http_request.request(p_request, ["Accept: *", "mode: no-cors"])
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
 
