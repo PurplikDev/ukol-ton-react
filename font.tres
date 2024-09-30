@@ -1,0 +1,5 @@
+[gd_resource type="SystemFont" format=3 uid="uid://pj0e3ouvrcvp"]
+
+[resource]
+font_names = PackedStringArray("Segoe UI")
+oversampling = 5.0

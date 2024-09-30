@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://k426gefig1l0"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_yrhg1"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_yrhg1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="node" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "node 1"
+
+[node name="node2" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "node 2"
+
+[node name="node3" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "node 3"
+
+[node name="node4" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "node 4"
+
+[node name="node5" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "node 5"
+
+[node name="node6" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "node 6"

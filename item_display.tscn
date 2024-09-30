@@ -1,0 +1,307 @@
+[gd_scene load_steps=28 format=3 uid="uid://c0j8dkd1xop4s"]
+
+[ext_resource type="Script" path="res://item_display.gd" id="1_krec4"]
+[ext_resource type="Theme" uid="uid://3kot6xdaavyd" path="res://theme.tres" id="1_ynw2n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23aew"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2i2s2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5cded"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfnpj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56udf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shlam"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2tauc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a0phu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kmu3w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6hkw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_niacy"]
+
+[sub_resource type="SystemFont" id="SystemFont_lb78m"]
+font_names = PackedStringArray("Segoe UI")
+font_weight = 650
+oversampling = 5.0
+
+[sub_resource type="SystemFont" id="SystemFont_q5mv3"]
+font_names = PackedStringArray("Segoe UI")
+font_weight = 650
+oversampling = 5.0
+
+[sub_resource type="FontVariation" id="FontVariation_tgcau"]
+base_font = SubResource("SystemFont_q5mv3")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uagtn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gkvog"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwabb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kgw10"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_brlyv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pr45l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ll067"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jffw0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4s8t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g247b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vtoih"]
+
+[node name="ItemDisplay" type="Control"]
+custom_minimum_size = Vector2(1000, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ynw2n")
+script = ExtResource("1_krec4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SmallPanel" type="Panel" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 100)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/SmallPanel"]
+custom_minimum_size = Vector2(900, 90)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.5
+offset_top = -13.5
+offset_right = 158.5
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SmallID" type="Label" parent="VBoxContainer/SmallPanel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.5
+text = "ID"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SmallName" type="Label" parent="VBoxContainer/SmallPanel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 3.0
+text = "NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SmallBrand" type="Label" parent="VBoxContainer/SmallPanel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.5
+text = "BRAND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SmallCondition" type="Label" parent="VBoxContainer/SmallPanel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "CONDITION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SmallPrice" type="Label" parent="VBoxContainer/SmallPanel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.75
+text = "PRICE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SmallButton" type="Button" parent="VBoxContainer/SmallPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_23aew")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_2i2s2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5cded")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_rfnpj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_56udf")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_shlam")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2tauc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_a0phu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kmu3w")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_o6hkw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_niacy")
+
+[node name="BigPanel" type="Panel" parent="VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(1000, 250)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/BigPanel"]
+layout_mode = 0
+offset_left = 250.0
+offset_right = 1000.0
+offset_bottom = 250.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/BigPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="BigID" type="Label" parent="VBoxContainer/BigPanel/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = SubResource("SystemFont_lb78m")
+theme_override_font_sizes/font_size = 25
+text = "ID"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BigTitle" type="Label" parent="VBoxContainer/BigPanel/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 5.0
+theme_override_fonts/font = SubResource("FontVariation_tgcau")
+theme_override_font_sizes/font_size = 25
+text = "TITLE"
+vertical_alignment = 1
+
+[node name="BigDescription" type="Label" parent="VBoxContainer/BigPanel/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(750, 23)
+layout_mode = 2
+text = "DESCRIPTION"
+autowrap_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/BigPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="BigAvailability" type="Label" parent="VBoxContainer/BigPanel/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "AVAILABiLITY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BigCondition" type="Label" parent="VBoxContainer/BigPanel/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CONDITION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BigPrice" type="Label" parent="VBoxContainer/BigPanel/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "PRICE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BigBrand" type="Label" parent="VBoxContainer/BigPanel/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "BRAND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/BigPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="BigGTIN" type="Label" parent="VBoxContainer/BigPanel/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BigItemGroupID" type="Label" parent="VBoxContainer/BigPanel/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BigLinkButton" type="LinkButton" parent="VBoxContainer/BigPanel/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Open Browser"
+
+[node name="BigItemImage" type="TextureRect" parent="VBoxContainer/BigPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 250.0
+grow_vertical = 2
+expand_mode = 2
+
+[node name="BigButton" type="Button" parent="VBoxContainer/BigPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uagtn")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_gkvog")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qwabb")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kgw10")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_brlyv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pr45l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ll067")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jffw0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j4s8t")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g247b")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vtoih")
+
+[node name="ImageRequest" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
